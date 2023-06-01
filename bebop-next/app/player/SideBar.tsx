@@ -1,12 +1,17 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { RightResizer } from './RightResizer';
 
-const REM_WIDTH = 16;
-const DEFAULT_WIDTH = parseFloat(window.getComputedStyle(document.documentElement).fontSize) * REM_WIDTH;
-
 const SideBar = () => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+  const REM_WIDTH = useRef(16).current;
+  const DEFAULT_WIDTH = useRef(
+    parseFloat(window.getComputedStyle(document.documentElement).fontSize) * REM_WIDTH
+  ).current;
   const [width, setWidth] = useState(DEFAULT_WIDTH);
+
   return (
     <nav
       className="bg-black h-[100%] left-0 sticky top-0 box-border flex-none"
