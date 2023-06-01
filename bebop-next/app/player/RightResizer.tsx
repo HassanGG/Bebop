@@ -14,6 +14,8 @@ enum ResizerColors {
 const RightResizer = ({ parentDefaultWidth, parentSetWidth }: RightResizerProps) => {
   const isMouseDown = useRef(false);
   const [borderColor, setBorderColor] = useState<string>(ResizerColors.DEFAULT);
+  console.log(borderColor);
+  
 
   const onMouseDownHandler = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     isMouseDown.current = true;
@@ -53,10 +55,10 @@ const RightResizer = ({ parentDefaultWidth, parentSetWidth }: RightResizerProps)
 
   return (
     <div
-      className="h-[calc(100%-1rem)] w-[0.5rem] cursor-ew-resize float-right mt-2 box-border"
+      className="h-[calc(100%-1rem)] w-[0.5rem] cursor-ew-resize float-right mt-2 "
       style={{
-        borderLeftColor: borderColor,
         borderLeft: 1,
+        borderLeftColor: borderColor,
         borderStyle: "solid",
       }}
       onMouseDown={onMouseDownHandler}

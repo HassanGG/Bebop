@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { RightResizer } from './RightResizer';
 
 const REM_WIDTH = 16;
-const DEFAULT_WIDTH =
-  parseFloat(window.getComputedStyle(document.documentElement).fontSize) * REM_WIDTH;
+const DEFAULT_WIDTH = parseFloat(window.getComputedStyle(document.documentElement).fontSize) * REM_WIDTH;
 
 const SideBar = () => {
   const [width, setWidth] = useState(DEFAULT_WIDTH);
