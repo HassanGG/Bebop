@@ -1,9 +1,7 @@
 const PlayerPage = () => {
   return (
-    <div>
-    </div>
+    <div className="bg-white w-[100%] h-[100%]"></div>
   )
 };
-
 
 export default PlayerPage;

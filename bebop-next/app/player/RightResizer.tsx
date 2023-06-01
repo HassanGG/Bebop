@@ -8,14 +8,12 @@ type RightResizerProps = {
 
 enum ResizerColors {
   DEFAULT = 'black',
-  INTERACTING = 'white',
+  INTERACTING = '#C1F2BB',
 }
 
 const RightResizer = ({ parentDefaultWidth, parentSetWidth }: RightResizerProps) => {
   const isMouseDown = useRef(false);
   const [borderColor, setBorderColor] = useState<string>(ResizerColors.DEFAULT);
-  console.log(borderColor);
-  
 
   const onMouseDownHandler = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     isMouseDown.current = true;
@@ -59,7 +57,7 @@ const RightResizer = ({ parentDefaultWidth, parentSetWidth }: RightResizerProps)
       style={{
         borderLeft: 1,
         borderLeftColor: borderColor,
-        borderStyle: "solid",
+        borderStyle: 'solid',
       }}
       onMouseDown={onMouseDownHandler}
       onMouseEnter={onMouseEnterHandler}
