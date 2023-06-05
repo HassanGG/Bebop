@@ -53,7 +53,7 @@ const RightResizer = ({ parentDefaultWidth, parentSetWidth }: RightResizerProps)
 
   return (
     <div
-      className="h-[calc(100%-1rem)] w-[0.5rem] cursor-ew-resize float-right mt-2 "
+      className="h-[calc(100%-1rem)] w-[0.5rem] cursor-ew-resize float-right mt-2"
       style={{
         borderLeft: 1,
         borderLeftColor: borderColor,
