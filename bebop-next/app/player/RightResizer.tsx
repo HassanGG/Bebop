@@ -1,5 +1,6 @@
 'use client';
 import { useCallback, useRef, useState } from 'react';
+import { Colors } from '../utils/Colors';
 
 type RightResizerProps = {
   parentDefaultWidth: number;
@@ -7,17 +8,17 @@ type RightResizerProps = {
 };
 
 enum ResizerColors {
-  DEFAULT = 'black',
-  INTERACTING = '#C1F2BB',
+  Default = Colors.Black,
+  Interacting = Colors.Green,
 }
 
 const RightResizer = ({ parentDefaultWidth, parentSetWidth }: RightResizerProps) => {
   const isMouseDown = useRef(false);
-  const [borderColor, setBorderColor] = useState<string>(ResizerColors.DEFAULT);
+  const [borderColor, setBorderColor] = useState<string>(ResizerColors.Default);
 
   const onMouseDownHandler = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     isMouseDown.current = true;
-    setBorderColor(ResizerColors.INTERACTING);
+    setBorderColor(ResizerColors.Interacting);
     window.addEventListener('mouseup', onMouseUpHandler, { once: true });
     window.addEventListener('mousemove', onMouseMoveHandler);
   }, []);
@@ -37,17 +38,17 @@ const RightResizer = ({ parentDefaultWidth, parentSetWidth }: RightResizerProps)
 
   const onMouseUpHandler = useCallback((event: MouseEvent) => {
     isMouseDown.current = false;
-    setBorderColor(ResizerColors.DEFAULT);
+    setBorderColor(ResizerColors.Default);
     window.removeEventListener('mousemove', onMouseMoveHandler);
   }, []);
 
   const onMouseEnterHandler = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
-    setBorderColor(ResizerColors.INTERACTING);
+    setBorderColor(ResizerColors.Interacting);
   }, []);
 
   const onMouseLeaveHandler = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     if (!isMouseDown.current) {
-      setBorderColor(ResizerColors.DEFAULT);
+      setBorderColor(ResizerColors.Default);
     }
   }, []);
 
