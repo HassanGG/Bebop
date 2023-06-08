@@ -42,6 +42,7 @@ const SideBar = () => {
               Library
             </p>
           </div>
+          <Carousel/>
           <SideItem />
           <SideItem />
           <SideItem />
