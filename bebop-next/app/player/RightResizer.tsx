@@ -26,7 +26,7 @@ const RightResizer = ({ parentDefaultWidth, parentSetWidth }: RightResizerProps)
   const onMouseMoveHandler = useCallback((event: MouseEvent) => {
     const mousePos = event.clientX;
     const windowMidPos = window.innerWidth / 2;
-    const minWidth = (parentDefaultWidth / 3) * 2;
+    const minWidth = parentDefaultWidth;
     if (mousePos > windowMidPos) {
       parentSetWidth(windowMidPos);
     } else if (mousePos < minWidth) {
