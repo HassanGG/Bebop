@@ -1,3 +1,16 @@
+const SideItems = ({ displayMeta }: { displayMeta: Boolean }) => {
+  return (
+    <div>
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+    </div>
+  );
+};
+
 const SideItem = ({ displayMeta }: { displayMeta: Boolean }) => {
   const metaData = displayMeta ? (
     <>
@@ -30,4 +43,4 @@ const SideItem = ({ displayMeta }: { displayMeta: Boolean }) => {
   );
 };
 
-export { SideItem };
+export { SideItems };

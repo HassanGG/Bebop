@@ -2,11 +2,11 @@
 import { useState } from 'react';
 import { RightResizer } from './RightResizer';
 import React from 'react';
-import { SideItem } from './SideItem';
 import { SideFilters } from './SideFilters';
 import { HomeAltSVG, HomeSVG } from './svgs/HomeSVG';
 import { SearchAltSVG, SearchSVG } from './svgs/SearchSVG';
 import { NavButton } from './NavButton';
+import { SideItems } from './SideItems';
 
 const REM_WIDTH = 20;
 const REM_PIXELS = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
@@ -30,13 +30,7 @@ const SideBar = () => {
             <p className="float-right w-1 ml-auto text-pink-300">+</p>
           </div>
           <SideFilters />
-          <SideItem displayMeta={true} />
-          <SideItem displayMeta={false} />
-          <SideItem displayMeta={true} />
-          <SideItem displayMeta={true} />
-          <SideItem displayMeta={true} />
-          <SideItem displayMeta={true} />
-          <SideItem displayMeta={true} />
+          <SideItems displayMeta={true}/>
         </div>
       </div>
     </nav>
