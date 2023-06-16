@@ -6,7 +6,6 @@ const HomePage = () => {
       <LongDisplay />
       <LongDisplay />
       <LongDisplay />
-      <LongDisplay />
     </div>
   );
 };

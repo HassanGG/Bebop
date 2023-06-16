@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RightResizer } from './RightResizer';
 import React from 'react';
 import { SideFilters } from './SideFilters';
@@ -8,21 +8,23 @@ import { SearchAltSVG, SearchSVG } from './svgs/SearchSVG';
 import { NavButton } from './NavButton';
 import { SideItems } from './SideItems';
 
-const REM_WIDTH = 20;
+const REM_SIDEBAR_WIDTH = 20;
 const REM_PIXELS = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
-const DEFAULT_WIDTH = REM_PIXELS * REM_WIDTH;
+const DEFAULT_WIDTH = REM_PIXELS * REM_SIDEBAR_WIDTH;
+const SHOW_META_WIDTH = DEFAULT_WIDTH + (REM_PIXELS * 10);
 
 const SideBar = () => {
   const [width, setWidth] = useState(DEFAULT_WIDTH);
+  const displayMeta = width > SHOW_META_WIDTH;
   return (
-    <nav className="bg-black h-[100%] left-0 sticky top-0 box-border flex-none" style={{ width: width }}>
+    <nav className="bg-black h-[100%] max-h-full left-0 sticky top-0 box-border flex-none" style={{ width: width }}>
       <RightResizer parentDefaultWidth={DEFAULT_WIDTH} parentSetWidth={setWidth} />
       <div className="h-full flex flex-col">
         <div className="bg-[#3A48FF] w-[100%] border-r-0 h-[8rem] border-black border-[0.5rem] border-solid rounded-br-[1rem] p-3 ">
           <NavButton Svg={HomeSVG} AltSvg={HomeAltSVG} href="/player/home" text="Home" />
           <NavButton Svg={SearchSVG} AltSvg={SearchAltSVG} href="/player/search" text="Search" />
         </div>
-        <div className="bg-[#3A48FF] w-[100%] border-black border-r-0 border-[0.5rem] border-t-[0rem] border-solid rounded-tr-[1rem] p-3 flex-grow">
+        <div className="bg-[#3A48FF] w-[100%] h-0 border-black border-r-0 border-[0.5rem] border-t-[0rem] border-solid rounded-tr-[1rem] p-3 flex-grow flex flex-col">
           <div className="flex flex-row select-none items-center">
             <img src={'/Layers.svg'} alt="Layers Icon" />
             <span className="w-[1rem]"></span>
@@ -30,7 +32,7 @@ const SideBar = () => {
             <p className="float-right w-1 ml-auto text-pink-300">+</p>
           </div>
           <SideFilters />
-          <SideItems displayMeta={true}/>
+          <SideItems displayMeta={displayMeta} />
         </div>
       </div>
     </nav>

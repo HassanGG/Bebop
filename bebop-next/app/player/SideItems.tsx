@@ -1,6 +1,12 @@
 const SideItems = ({ displayMeta }: { displayMeta: Boolean }) => {
   return (
-    <div>
+    <div className="h-[0rem] overflow-scroll flex-grow overflow-x-hidden">
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
+      <SideItem displayMeta={displayMeta} />
       <SideItem displayMeta={displayMeta} />
       <SideItem displayMeta={displayMeta} />
       <SideItem displayMeta={displayMeta} />

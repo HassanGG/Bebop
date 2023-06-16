@@ -1,6 +1,6 @@
 const Controls = () => {
   return (
-    <div className="bg-black w-full h-[6rem] justify-between flex-row flex select-none">
+    <div className="bg-black w-full h-[6rem] sticky justify-between flex-row flex select-none">
       <div className="flex flex-row items-center">
         <div className="w-[3rem] h-[3rem] m-3 bg-white"></div>
         <section>
@@ -10,7 +10,7 @@ const Controls = () => {
       </div>
       <p>play button</p>
       <p>
-        Volume Controls
+ sdfasdf       Volume Controls
       </p>
 
     </div>
