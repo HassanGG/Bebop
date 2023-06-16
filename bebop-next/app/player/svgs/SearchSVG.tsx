@@ -14,9 +14,9 @@ const SearchSVG = () => {
 
 const SearchAltSVG = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="none" viewBox="0 0 24 24">
       <path
-        fill="#222"
+        fill="currentColor"
         fillRule="evenodd"
         d="M11 18a7 7 0 100-14 7 7 0 000 14zm0-12a5 5 0 00-5 5 1 1 0 102 0 3 3 0 013-3 1 1 0 100-2z"
         clipRule="evenodd"

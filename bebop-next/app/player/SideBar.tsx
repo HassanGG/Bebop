@@ -7,11 +7,12 @@ import { HomeAltSVG, HomeSVG } from './svgs/HomeSVG';
 import { SearchAltSVG, SearchSVG } from './svgs/SearchSVG';
 import { NavButton } from './NavButton';
 import { SideItems } from './SideItems';
+import { AddSVG } from './svgs/AddSVG';
 
 const REM_SIDEBAR_WIDTH = 20;
 const REM_PIXELS = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
 const DEFAULT_WIDTH = REM_PIXELS * REM_SIDEBAR_WIDTH;
-const SHOW_META_WIDTH = DEFAULT_WIDTH + (REM_PIXELS * 10);
+const SHOW_META_WIDTH = DEFAULT_WIDTH + REM_PIXELS * 10;
 
 const SideBar = () => {
   const [width, setWidth] = useState(DEFAULT_WIDTH);
@@ -29,7 +30,9 @@ const SideBar = () => {
             <img src={'/Layers.svg'} alt="Layers Icon" />
             <span className="w-[1rem]"></span>
             <p className={`text-xl text-[#C1F2BB] font-semibold`}>Library</p>
-            <p className="float-right w-1 ml-auto text-pink-300">+</p>
+            <p className="float-right w-1 ml-auto text-pink-300 mr-5">
+              <AddSVG />
+            </p>
           </div>
           <SideFilters />
           <SideItems displayMeta={displayMeta} />
