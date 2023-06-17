@@ -20,7 +20,14 @@ const SideItems = ({ displayMeta }: { displayMeta: Boolean }) => {
 const SideItem = ({ displayMeta }: { displayMeta: Boolean }) => {
   const metaData = displayMeta ? (
     <>
-      <p className="text-sm">Date Added</p> <p className="text-sm">Last Played</p>
+      <section className="text-xs">
+        <p>Date Added</p>
+        <p>12/2/2</p>
+      </section> 
+      <section className="text-xs pr-2">
+        <p>Last Played</p>
+        <p> 3/2/1</p>
+      </section>
     </>
   ) : (
     <> </>
