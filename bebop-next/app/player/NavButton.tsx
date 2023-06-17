@@ -13,7 +13,7 @@ const NavButton = ({ Svg, AltSvg, href, text }: NavButtonProps) => {
   
   return (
     <Link href={href}>
-      <div className={`flex flex-row select-none items-center mt-1 hover:text-[#FF9CF4]`}>
+      <div className={`flex flex-row select-none items-center mt-1 hover:text-[#FF9CF4] hover:scale-110 hover:translate-x-2  ease-in-out transition duration-200`}>
         {displaySVG}
         <span className="w-[1rem]"></span>
         <p className="font-semibold">{text}</p>
